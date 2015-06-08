@@ -13,7 +13,7 @@ int main()
 	string answer = "y";
 	string file;
 	int data;
-	Hash<T> hash;
+	Hash<int> hash;
 
 	while (answer == "y")
 	{

@@ -1,29 +1,22 @@
-﻿Build started 6/8/2015 11:25:16 AM.
+﻿Build started 6/8/2015 3:45:12 PM.
      1>Project "C:\Users\Owner\Documents\GitHub\Project_05_MR_V1.0\Project_05_MR_V1.0\Project_05_MR_V1.0\Project_05_MR_V1.0.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Hash.cpp main.cpp
          main.cpp
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.h(47): error C2143: syntax error : missing ';' before '<'
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.h(47): error C2988: unrecognizable template declaration/definition
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.h(47): error C2059: syntax error : '<'
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.h(47): error C2039: 'Hash' : is not a member of '`global namespace''
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(10): error C2065: 'cout' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(12): error C2065: 'ifstream' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(12): error C2146: syntax error : missing ';' before identifier 'in'
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(12): error C2065: 'in' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(13): error C2065: 'string' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(13): error C2146: syntax error : missing ';' before identifier 'answer'
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(13): error C2065: 'answer' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(14): error C2065: 'string' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(14): error C2146: syntax error : missing ';' before identifier 'file'
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(14): error C2065: 'file' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(15): error C2065: 'Hash' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(15): error C2065: 'T' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(15): error C2065: 'hash' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(17): error C2065: 'answer' : undeclared identifier
-     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(17): fatal error C1903: unable to recover from previous error(s); stopping compilation
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(16): error C2065: 'Hash' : undeclared identifier
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(16): error C2062: type 'int' unexpected
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(25): warning C4390: ';' : empty controlled statement found; is this the intent?
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\main.cpp(31): error C2143: syntax error : missing ';' before '.'
+         Hash.cpp
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.cpp(3): error C2653: 'Hash' : is not a class or namespace name
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.cpp(4): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.cpp(6): warning C4508: 'Hash' : function should return a value; 'void' return type assumed
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.cpp(8): error C2653: 'Hash' : is not a class or namespace name
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.cpp(10): error C2065: 'MAX' : undeclared identifier
+     1>c:\users\owner\documents\github\project_05_mr_v1.0\project_05_mr_v1.0\project_05_mr_v1.0\hash.cpp(12): error C2059: syntax error : '}'
+         Generating Code...
      1>Done Building Project "C:\Users\Owner\Documents\GitHub\Project_05_MR_V1.0\Project_05_MR_V1.0\Project_05_MR_V1.0\Project_05_MR_V1.0.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:00:02.39
+Time Elapsed 00:00:04.27
