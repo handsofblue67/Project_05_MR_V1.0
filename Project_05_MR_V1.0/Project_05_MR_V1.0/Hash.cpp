@@ -21,26 +21,28 @@ string Hash::insert(int data)
 	if (table[index] == empty)
 	{
 		table[index] = data;
-		oss << "Inserted at" << index;
+		oss << "Inserted " << data << " at " << index << endl;
 	}
 
-	if (table[index] != empty)
+	else if (table[index] != empty)
 	{
-		bool inserted = resolveCollision((index), data);
+		oss << "Collision detected while inserting " << data << " at location " << index << "... ";
+	
+		RETURN_CODE inserted = resolveCollision((index), data);
 		
 		if (inserted == 0)
 		{
-			oss << "Inserted";
+			oss << " Inserted at " << index << endl;
 		}
 
 		else if (inserted == 1)
 		{
-			oss << "Failed to insert\nReason: Table is full";
+			oss << " Failed to insert. Reason: Table is full\n";
 		}
 
 		else
 		{
-			oss << "Failed to insert\nReason: Table already the value" << data << "at location" << index;
+			oss << " Failed to insert. Reason: Table already the value " << data << " at location " << index;
 		}
 
 	}
@@ -48,7 +50,56 @@ string Hash::insert(int data)
 	return oss.str();
 }
 
-RETURN_CODE Hash::resolveCollision(int index, int data)
+int Hash::getHashValueImproved(string data) //an improved hashing function that will result if fewer collisions, especially in larger tables
+{
+	int value = 0;
+
+	for (int i = 0; i < data.length(); i++)
+	{
+		value += data[i];
+	}
+
+	return (value * data.length()) % MAX;
+}
+
+string Hash::insertImproved(string data) //improved insert function that takes advantage of the improved hasing function
+{
+	ostringstream oss;
+	int index = getHashValueImproved(data);
+
+	if (table[index] == empty)
+	{
+		table[index] = stoi(data);
+		oss << "Inserted " << data << " at " << index << endl;
+	}
+
+	else
+	{
+		oss << "Collision detected while inserting " << data << " at location " << index << "... ";
+
+		RETURN_CODE inserted = resolveCollision((index), stoi(data));
+
+		if (inserted == 0)
+		{
+			oss << " Inserted at " << index << endl;
+		}
+
+		else if (inserted == 1)
+		{
+			oss << " Failed to insert. Reason: Table is full\n";
+		}
+
+		else
+		{
+			oss << " Failed to insert. Reason: Table already the value " << data << " at location " << index;
+		}
+
+	}
+
+	return oss.str();
+}
+
+RETURN_CODE Hash::resolveCollision(int& index, int data)
 {
 	int count = 0;
 	while (table[index] != -999 && count != MAX) //as long as the current index is occupied, and the loop has not made a complete rotation (full array). Cycle through array.  
