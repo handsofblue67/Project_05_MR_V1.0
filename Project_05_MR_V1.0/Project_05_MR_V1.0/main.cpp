@@ -2,6 +2,7 @@
 #include<fstream>
 #include<string>
 #include "Hash.h"
+#include "QHash.h"
 
 using namespace std;
 
@@ -14,19 +15,19 @@ int main()
 	string file;
 	int data;
 	Hash hash;
-	Hash hashImproved;
+	QHash hashImproved; //improved hash table with quadratic probing and better hash function
 	string dataImproved;
 	
 	do
 	{
 		cout << "Enter the name of the file\n";
-		cin >> file;
+		file = "p5datafile.txt";
+		//cin >> file;
 		in.open(file);
 
 		if (in.fail())
 		{
 			cout << "Failed to open file.\n'y' to try again\n";
-			cin >> answer;
 		}
 
 		else
@@ -38,12 +39,13 @@ int main()
 				cout << hash.insert(data) << endl;
 
 			}
-			cout << hash.print();
-		
+
 			in.clear(); //return to beginning of file
 			in.seekg(0, ios::beg); 
+	
+			cout << hash.print() << endl;
 			
-			cout << "\nUsing improved hash\n\n"; //print to mark new hashing function
+			cout << "\nUsing improved hash\n\n"; //improved hashing function and quadratic probing
 			while (in >> dataImproved)
 			{
 				cout << hashImproved.insertImproved(dataImproved) << endl;

@@ -65,10 +65,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Hash.h" />
+    <ClInclude Include="QHash.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Hash.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="QHash.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

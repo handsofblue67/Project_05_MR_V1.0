@@ -10,7 +10,7 @@ Hash::Hash()
 
 int Hash::getHashValue(int data)
 {
-	return data % MAX;
+	return (data % MAX) - 1;
 }
 
 string Hash::insert(int data)
@@ -42,60 +42,11 @@ string Hash::insert(int data)
 
 		else
 		{
-			oss << " Failed to insert. Reason: Table already the value " << data << " at location " << index;
+			oss << " Failed to insert. Reason: Table already the value " << data << " at location " << index << endl;
 		}
 
 	}
 	
-	return oss.str();
-}
-
-int Hash::getHashValueImproved(string data) //an improved hashing function that will result if fewer collisions, especially in larger tables
-{
-	int value = 0;
-
-	for (int i = 0; i < data.length(); i++)
-	{
-		value += data[i];
-	}
-
-	return (value * data.length()) % MAX;
-}
-
-string Hash::insertImproved(string data) //improved insert function that takes advantage of the improved hasing function
-{
-	ostringstream oss;
-	int index = getHashValueImproved(data);
-
-	if (table[index] == empty)
-	{
-		table[index] = stoi(data);
-		oss << "Inserted " << data << " at " << index << endl;
-	}
-
-	else
-	{
-		oss << "Collision detected while inserting " << data << " at location " << index << "... ";
-
-		RETURN_CODE inserted = resolveCollision((index), stoi(data));
-
-		if (inserted == 0)
-		{
-			oss << " Inserted at " << index << endl;
-		}
-
-		else if (inserted == 1)
-		{
-			oss << " Failed to insert. Reason: Table is full\n";
-		}
-
-		else
-		{
-			oss << " Failed to insert. Reason: Table already the value " << data << " at location " << index;
-		}
-
-	}
-
 	return oss.str();
 }
 
@@ -122,12 +73,12 @@ RETURN_CODE Hash::resolveCollision(int& index, int data)
 		count++;
 	}
 
-	if (index == (index - 1)) //if array is full (made a full rotation)
+	if (count == (MAX)) //if array is full (made a full rotation)
 	{
 		return FULL;
 	}
 
-	if (table[index] == -999) //if found an empty index, add element
+	else if (table[index] == -999) //if found an empty index, add element
 	{
 		table[index] = data;
 		return INSERTED;
