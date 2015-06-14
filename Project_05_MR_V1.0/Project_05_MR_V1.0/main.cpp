@@ -33,9 +33,11 @@ int main()
 		else
 		{
 
-			cout << "\nUsing mod hash\n\n"; //mod hashing function
+			cout << "\n--------------------------------------------------------------------------------";
+			cout << "\nUsing mod hash\n--------------------------------------------------------------------------------\n"; //mod hashing function
 			while (in >> data)
 			{
+				hash.getHashValue(data);
 				cout << hash.insert(data) << endl;
 
 			}
@@ -45,7 +47,8 @@ int main()
 	
 			cout << hash.print() << endl;
 			
-			cout << "\nUsing improved hash\n\n"; //improved hashing function and quadratic probing
+			cout << "--------------------------------------------------------------------------------";
+			cout << "\nUsing improved hash\n--------------------------------------------------------------------------------\n"; //improved hashing function and quadratic probing
 			while (in >> dataImproved)
 			{
 				cout << hashImproved.insertImproved(dataImproved) << endl;
