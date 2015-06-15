@@ -1,3 +1,15 @@
+// Author:			Michael Robison
+// Assignment:		5
+// File:			QHash.cpp
+// Instructor:		
+// Class:			CS 2420
+// Date Written:	6/14/2015
+// Description:		Quadratic probing class, that also utilized an improved hashing function
+
+//I declare that the following source code was written only by me.
+//I understand that copying any source code, in whole or in part, constitutes cheating,
+//and that I will receive a zero on this project if I am found in violation of this policy
+
 #include "QHash.h"
 
 QHash::QHash()
@@ -27,18 +39,18 @@ string QHash::insertImproved(string data) //improved insert function that takes 
 	if (table[index] == empty)
 	{
 		table[index] = stoi(data);
-		oss << "Inserted " << data << " at " << index << endl;
+		oss << "Inserted key " << data << " at index " << index << endl;
 	}
 
 	else
 	{
-		oss << "Collision detected while inserting " << data << " at location " << index << "... ";
+		oss << "Collision detected while inserting key " << data << " at index " << index << "... ";
 
 		Q_RETURN_CODE inserted = resolveQuadratic((index), stoi(data));
 
 		if (inserted == 0)
 		{
-			oss << " Inserted at " << index << endl;
+			oss << " Inserted at index " << index << endl;
 		}
 
 		else if (inserted == 1)
@@ -48,7 +60,7 @@ string QHash::insertImproved(string data) //improved insert function that takes 
 
 		else
 		{
-			oss << " Failed to insert. Reason: Table already the value " << data << " at location " << index << endl;
+			oss << " Failed to insert. Reason: Table already contains the key " << data << " at index " << index << endl;
 		}
 
 	}
@@ -98,7 +110,7 @@ Q_RETURN_CODE QHash::resolveQuadratic(int& index, int data)
 	}
 }
 
-string QHash::print()
+string QHash::show()
 {
 	ostringstream oss;
 

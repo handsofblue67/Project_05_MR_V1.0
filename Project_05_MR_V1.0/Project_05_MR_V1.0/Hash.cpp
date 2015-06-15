@@ -1,3 +1,15 @@
+// Author:			Michael Robison
+// Assignment:		5
+// File:			Hash.h
+// Instructor:		
+// Class:			CS 2420
+// Date Written:	6/14/2015
+// Description:		hash class that meets the course requirements
+
+//I declare that the following source code was written only by me.
+//I understand that copying any source code, in whole or in part, constitutes cheating,
+//and that I will receive a zero on this project if I am found in violation of this policy
+
 #include "Hash.h"
 
 Hash::Hash()
@@ -21,18 +33,18 @@ string Hash::insert(int data)
 	if (table[index] == empty)
 	{
 		table[index] = data;
-		oss << "Inserted " << data << " at " << index << endl;
+		oss << "Inserted key " << data << " at index " << index << endl;
 	}
 
 	else if (table[index] != empty)
 	{
-		oss << "Collision detected while inserting " << data << " at location " << index << "... ";
+		oss << "Collision detected while inserting key " << data << " at index " << index << "... ";
 	
 		RETURN_CODE inserted = resolveCollision((index), data);
 		
 		if (inserted == 0)
 		{
-			oss << " Inserted at " << index << endl;
+			oss << " Inserted at index " << index << endl;
 		}
 
 		else if (inserted == 1)
@@ -42,7 +54,7 @@ string Hash::insert(int data)
 
 		else
 		{
-			oss << " Failed to insert. Reason: Table already the value " << data << " at location " << index << endl;
+			oss << " Failed to insert. Reason: Table already contains the key " << data << " at index " << index << endl;
 		}
 
 	}
@@ -85,7 +97,7 @@ RETURN_CODE Hash::resolveCollision(int& index, int data)
 	}
 }
 
-string Hash::print()
+string Hash::show()
 {
 	ostringstream oss;
 	
